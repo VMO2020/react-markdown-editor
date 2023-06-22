@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+/* Variables */
+:root {
+	--main-light-color: rgb(247, 242, 233);
+	--main-color: orange;
+	--main-dark-color: rgb(178, 80, 0);
+
+	--dark-color: black;
+	--med-dark-color: rgb(104, 103, 103);
+	--med-color: grey;
+	--med-light-color: lightgrey;
+	--light-color: white;
+
+	--alert-color: orange;
+	--html-color: rgb(28, 28, 28);
+
+	--size-img-1: clamp(10rem, 24vw, 16rem);
+
+	--size-1: clamp(2rem, 6vw, 4rem);
+	--size-2: clamp(1.5rem, 5vw, 3rem);
+	--size-3: clamp(1.2rem, 4vw, 2.5rem);
+	--size-4: clamp(1.1rem, 3.5vw, 2rem);
+	--size-5: clamp(1rem, 3vw, 1.8rem);
+	--size-6: clamp(0.9rem, 2.5vw, 1.5rem);
+	--size-7: clamp(0.8rem, 2.2vw, 1.2rem);
+	--size-8: clamp(0.7rem, 2.1vw, 1.1rem);
+
+	--sm-icon: var(--size-3);
+	--md-icon: var(--size-1);
+	--lg-icon: clamp(3rem, 5.2vw, 5rem);
+
+	--sm-shadow: 3px 3px 5px var(--med-color);
+	--lg-shadow: 5px 5px 8px var(--med-color);
+
+	--min-width: 320px;
+	--max-width: 1600spx;
+}
+
+/* General */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: var(--html-color);
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+
+	line-height: 1.6;
+	letter-spacing: 0.05em;
+	/* letter-spacing: 0.01em; */
+
+	min-width: var(--min-width);
+	max-width: var(--max-width);
+	min-height: 100svh;
+
+	margin: 0 auto;
+	scroll-behavior: smooth;
+
+	color: var(--dark-color);
+	background-color: var(--light-color);
+}
+
+/* Fonts */
+h1 {
+	font-size: var(--size-1);
+	line-height: 1em;
+}
+
+h2 {
+	font-size: var(--size-2);
+	line-height: 1.1em;
+}
+
+h3 {
+	font-size: var(--size-3);
+	line-height: 1.2em;
+}
+
+h4 {
+	font-size: var(--size-4);
+	line-height: 1.4em;
+}
+
+h5 {
+	font-size: var(--size-5);
+}
+
+h6 {
+	font-size: var(--size-6);
+}
+
+p {
+	font-size: var(--size-7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0.2em;
+}
