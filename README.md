@@ -12,7 +12,7 @@ Terminal: `yarn dev`
 4. Terminal: `yarn dev`
 5. Update files: `main.jsx & App.jsx`
 6. Change (src): `index.css to styles.css`
-7. Terminal: `yarn add react-markdown-editor-lite` & `markdown-it`
+7. Terminal: `yarn add react-markdown-editor-lite` & `yarn add markdown-it`
 
 ```js
 import './styles.css';
@@ -42,3 +42,23 @@ import './styles.css';
 10. Environment Add: `CI`=`false`
 11. Deploy site
 12. Site settings: Change url name: `https://react-markdow-editor.netlify.app/`
+
+## Update
+
+1. Terminal: `git add .`
+2. Terminal: `git commit -m "FEAT:"`
+3. Terminal: `git push`
+
+## Preview Markdown
+
+```js
+import MdEditor from 'react-markdown-editor-lite';
+
+export default function App() {
+  return (
+    <div className="container">
+      <MDEditor.Markdown source="Hello Markdown!" />
+    </div>
+  );
+}
+```

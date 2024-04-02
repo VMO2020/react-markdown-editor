@@ -1,0 +1,27 @@
+.header {
+	display: flex;
+	margin: 3px 0;
+}
+
+.btn {
+	padding: 0.1rem 2rem;
+	margin-left: 0.3rem;
+}
+
+.words-counter {
+	margin-left: 2rem;
+}
+
+.words-counter span {
+	margin-left: 2rem;
+	font-weight: 700;
+}
+
+.copied {
+	color: green;
+	margin-left: 2rem;
+}
+
+.markdown-editor {
+	margin-top: 0;
+}
