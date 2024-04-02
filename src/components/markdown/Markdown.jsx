@@ -13,6 +13,8 @@ const mdParser = new MarkdownIt(/* Markdown-it options */);
 export const Markdown = () => {
 	const [jsonString, setJsonString] = useState('');
 	const [words, setWords] = useState(0);
+	const [htmlData, setHtmlData] = useState('');
+	const [textData, setTextData] = useState('');
 	const [copied, setCopied] = useState('');
 
 	const copiedAlert = (text) => {
@@ -34,6 +36,30 @@ export const Markdown = () => {
 			});
 	};
 
+	const handleCopyToClipboardHTML = () => {
+		navigator.clipboard
+			.writeText(htmlData)
+			.then(() => {
+				// alert('HTML content copied to clipboard');
+				copiedAlert('HTML content copied to clipboard');
+			})
+			.catch((error) => {
+				alert('Failed to copy HTML content to clipboard:', error);
+			});
+	};
+
+	const handleCopyToClipboardTEXT = () => {
+		navigator.clipboard
+			.writeText(textData)
+			.then(() => {
+				// alert('HTML content copied to clipboard');
+				copiedAlert('TEXT content copied to clipboard');
+			})
+			.catch((error) => {
+				alert('Failed to copy TEXT content to clipboard:', error);
+			});
+	};
+
 	const countWords = (text) => {
 		const words = text.trim().split(/\s+/);
 		return words.length;
@@ -52,7 +78,13 @@ export const Markdown = () => {
 		// Words
 		setWords(countWords(text));
 
-		console.log('handleEditorChange', html, text);
+		// HTML
+		setHtmlData(html);
+
+		// TEXT
+		setTextData(text);
+
+		// console.log('handleEditorChange', html, text);
 	}
 
 	return (
@@ -60,6 +92,12 @@ export const Markdown = () => {
 			<div className="header">
 				<button className="btn" onClick={handleCopyToClipboard}>
 					Copy JSON
+				</button>
+				<button className="btn" onClick={handleCopyToClipboardHTML}>
+					Copy HTML
+				</button>
+				<button className="btn" onClick={handleCopyToClipboardTEXT}>
+					Copy TEXT
 				</button>
 				<p className="words-counter">
 					Words: <span>{words}</span>
