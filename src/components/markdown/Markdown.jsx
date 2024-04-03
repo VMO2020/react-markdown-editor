@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+// Markdown
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 
@@ -12,10 +14,10 @@ const mdParser = new MarkdownIt(/* Markdown-it options */);
 // eslint-disable-next-line react/prop-types
 export const Markdown = () => {
 	const [jsonString, setJsonString] = useState('');
-	const [words, setWords] = useState(0);
 	const [htmlData, setHtmlData] = useState('');
 	const [textData, setTextData] = useState('');
 	const [copied, setCopied] = useState('');
+	const [words, setWords] = useState(0);
 
 	const copiedAlert = (text) => {
 		setCopied(text);
@@ -28,11 +30,11 @@ export const Markdown = () => {
 		navigator.clipboard
 			.writeText(jsonString)
 			.then(() => {
-				// alert('JSON content copied to clipboard');
-				copiedAlert('JSON content copied to clipboard');
+				// alert('JString content copied to clipboard');
+				copiedAlert('String content copied to clipboard');
 			})
 			.catch((error) => {
-				alert('Failed to copy JSON content to clipboard:', error);
+				alert('Failed to copy String content to clipboard:', error);
 			});
 	};
 
@@ -66,13 +68,8 @@ export const Markdown = () => {
 	};
 
 	function handleEditorChange({ html, text }) {
-		// Convert Markdown to JSON
-		const updatedForm = {
-			content: text,
-		};
-
-		// Stringify JSON object
-		const String = JSON.stringify(updatedForm, null, 2);
+		// Convert Markdown to String
+		const String = JSON.stringify(text, null, 2);
 		setJsonString(String);
 
 		// Words
@@ -91,7 +88,7 @@ export const Markdown = () => {
 		<>
 			<div className="header">
 				<button className="btn" onClick={handleCopyToClipboard}>
-					Copy JSON
+					Copy STRING
 				</button>
 				<button className="btn" onClick={handleCopyToClipboardHTML}>
 					Copy HTML
